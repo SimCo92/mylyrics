@@ -1,1 +1,37 @@
-# mylyrics
+# MyLyrics
+This repository contains an API that provides the lyric of songs from two internet catalogue (AZlyrics, Elyrics)
+
+## Prerequisites
+To be able to build and test the application on your local environment, you need to have:
+
+- Python 3.x (https://www.python.org/)
+
+All the test has been done with Python 3.7
+On top of Python we need the following packages:
+
+- BeautifulSoup
+- Requests
+
+## Features
+Print lyrics in Terminal.
+Save lyrics in a .txt file if required.
+
+## Installation
+In order to install the required packages run the following command:
+$ pip install -r requirements.txt      
+
+## Usage
+The application will run on cmd and it accept the following parameters:
+
+$ python mylyrics.py -a "red hot chili peppers" -l "californication" -p "azlyrics" -s
+
+$ python mylyrics.py [-h] [-a ARTIST] [-l LYRIC] [-p PROVIDER] [-s SAVE]
+
+$ [-h] [--help] : help
+$ [-a] [--artist] : artist (required)
+$ [-l] [--lyric] : lyric (required)
+$ [-p] [--provider] : provider [ azlyrics , elyrics ]
+$ [-s] [--save] : if passed save the lyric in .txt file
+
+## Future implementation
+...
