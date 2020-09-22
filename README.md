@@ -1,4 +1,4 @@
-# MyLyrics
+# MyLyrics 1.0 (Not stable)
 This repository contains an API that provides the lyric of songs from two internet catalogue (AZlyrics, Elyrics)
 
 ## Prerequisites
