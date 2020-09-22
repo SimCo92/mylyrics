@@ -34,7 +34,7 @@ $ [-h] [--help] : help
 $ [-a] [--artist] : artist (required)
 $ [-l] [--lyric] : lyric (required)
 $ [-p] [--provider] : provider [ azlyrics , elyrics ]
-$ [-s] [--save] : if passed save the lyric in .txt file
+$ [-s] [--save] :  save a .txt file with the lyric
 ```
 ## Future implementation
-...
+Next will be implemented unit test to help in debug and trubleshooting and later integration test with the two source of information.
