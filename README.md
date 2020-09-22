@@ -6,7 +6,7 @@ To be able to build and test the application on your local environment, you need
 
 - Python 3.x (https://www.python.org/)
 
-All the test has been done with Python 3.7
+All the test has been done with Python 3.7 and macOS Catalina 10.15.6.
 On top of Python we need the following packages:
 
 - BeautifulSoup
