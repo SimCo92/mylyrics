@@ -18,13 +18,16 @@ Save lyrics in a .txt file if required.
 
 ## Installation
 In order to install the required packages run the following command:
-$ pip install -r requirements.txt      
+```sh
+$ pip install -r requirements.txt
+```      
 
 ## Usage
 The application will run on cmd and it accept the following parameters:
-
+```sh
 $ python mylyrics.py -a "red hot chili peppers" -l "californication" -p "azlyrics" -s
-
+```
+```sh
 $ python mylyrics.py [-h] [-a ARTIST] [-l LYRIC] [-p PROVIDER] [-s SAVE]
 
 $ [-h] [--help] : help
@@ -32,6 +35,6 @@ $ [-a] [--artist] : artist (required)
 $ [-l] [--lyric] : lyric (required)
 $ [-p] [--provider] : provider [ azlyrics , elyrics ]
 $ [-s] [--save] : if passed save the lyric in .txt file
-
+```
 ## Future implementation
 ...
