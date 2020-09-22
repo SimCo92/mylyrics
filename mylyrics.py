@@ -30,35 +30,48 @@ if args.save:
 
 if __name__ == '__main__':
 
+
     filename = mo.create_filename(artist,title)
     song = mo.Song(artist,title)
 
+    objAZ = mo.Azlyrics(artist,title)
+    objEL = mo.Elyrics(artist,title)
+
     if song.search_in_repo() == False  :
 
-        if "azlyrics" in provider:
+        if provider == "azlyrics":
             try:
                 print("Searching in AZlyrics...")
-                obj = mo.Azlyrics(artist,title)
-                print(obj.get_lyric())
+                print(objAZ.get_lyric())
                 if saveflag:
-                    obj.save()
+                    objAZ.save()
+            except:
+                print("no results in AZlyrics")
+
+        elif provider == "elyrics":
+            try:
+                print("Searching in Elyrics...")
+                print(objEL.get_lyric())
+                if saveflag:
+                    objAZ.save()
+            except:
+                print("no results in Elyrics")
+
+        elif provider == ["azlyrics", "elyrics"]:
+            try:
+                print("Searching in AZlyrics...")
+                print(objAZ.get_lyric())
+                if saveflag:
+                    objAZ.save()
             except:
                 try:
                     print("Searching in Elyrics...")
-                    obj = mo.Elyrics(artist,title)
-                    print(obj.get_lyric())
+                    print(objEL.get_lyric())
                     if saveflag:
-                        obj.save()
+                        objAZ.save()
                 except:
-                    print("no results")
-        else:
-            try:
-                obj = mo.Elyrics(artist,title)
-                print(obj.get_lyric())
-                if saveflag:
-                    obj.save()
-            except:
-                print("no results")
+                    print("no result in both")
+                
     
     else:
         f = open(filename + ".txt", "r")
