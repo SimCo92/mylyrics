@@ -30,12 +30,15 @@ if args.save:
 
 if __name__ == '__main__':
 
+    
 
     filename = mo.create_filename(artist,title)
     song = mo.Song(artist,title)
 
     objAZ = mo.Azlyrics(artist,title)
     objEL = mo.Elyrics(artist,title)
+
+    print(mo.get_lyric.__doc__)
 
     if song.search_in_repo() == False  :
 

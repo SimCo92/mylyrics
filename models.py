@@ -7,6 +7,9 @@ import re
 HOME_FOLDER = os.path.dirname(os.path.realpath(__file__))
 
 def create_filename(artist,lyric):
+    """
+    receive in input artist name and song name and it return the standard naming for the txt
+    """
     artist_str = artist.replace(" ", "_").replace("'","_").lower()
     lyric_str = lyric.replace(" ", "_").replace("'","_").lower()
     filename = artist_str + "-" + lyric_str
@@ -73,8 +76,7 @@ class Azlyrics(Search):
         try:
             response = self.connection()
             soup = BeautifulSoup(response.text, 'html.parser')
-            text = soup.find_all("div", attrs={"class": None, "id": None})
-            text = [x.getText() for x in text]
+            text = soup.find("div", attrs={"class": None, "id": None}).text
             self.text = text
             return text
         except requests.exceptions.RequestException as e:
@@ -94,7 +96,6 @@ class Elyrics(Search):
     def get_lyric(self):
         response = self.connection()
         soup = BeautifulSoup(response.text, 'html.parser')
-        text = soup.find_all("div", attrs={"id": "inlyr"})
-        text = [x.getText()for x in text]
+        text = soup.find("div", attrs={"id": "inlyr"}).text
         self.text = text
         return text
